@@ -26,5 +26,16 @@ while not snow:
             snow = True
 
     myDisplay.blit(background_image,background_position)
+    for i in SnowFlakes:
+        i[1]+= 1
+        pygame.draw.circle(myDisplay, white, i, 7)
+        if i[1] > 580:
+            i[1] = random.randrange(-50, -5)
+            i[0] = random.randrange(1100)
+
+    pygame.display.flip()
+    clock.tick(600)
+pygame.quit()
+
 
 
